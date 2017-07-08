@@ -5,7 +5,7 @@
 """"""""""""""""""""""
 set nocompatible                " Enables us Vim specific features
 filetype off                    " Reset filetype detection first ...
-
+language en_US
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -216,7 +216,7 @@ set completeopt+=noselect
 let g:loaded_python_provider = 1
 
 " Path to python interpreter for neovim
-let g:python3_host_prog  = '/Users/rdifazio/.pyenv/shims/python3'
+let g:python3_host_prog  = '/usr/local/bin/python3'
 let g:python_host_prog  = '/usr/local/bin/python'
 " Skip the check of neovim module
 let g:python3_host_skip_check = 1
