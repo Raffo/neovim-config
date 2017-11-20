@@ -27,6 +27,8 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 
+NeoBundle 'jamessan/vim-gnupg'
+
 
 
 call neobundle#end()
@@ -209,9 +211,9 @@ nmap <leader>nt :NERDTreeToggle<cr>
 
 " deoplete
 " neocomplete like
-set completeopt+=noinsert
+"set completeopt+=noinsert
 " deoplete.nvim recommend
-set completeopt+=noselect
+"set completeopt+=noselect
 
 let g:loaded_python_provider = 1
 
@@ -222,7 +224,7 @@ let g:python_host_prog  = '/usr/local/bin/python'
 let g:python3_host_skip_check = 1
 
 " Run deoplete.nvim automatically
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 " deoplete-go settings
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
