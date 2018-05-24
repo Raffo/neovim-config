@@ -59,7 +59,7 @@ set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 set noshowmatch                 " Do not show matching brackets by flickering
 set noshowmode                  " We show the mode with airline or lightline
 set ignorecase                  " Search case insensitive...
-set smartcase                   " ... but not it begins with upper case 
+set smartcase                   " ... but not it begins with upper case
 set completeopt=menu,menuone    " Show popup menu, even if there is one entry
 set pumheight=10                " Completion window max size
 set nocursorcolumn              " Do not highlight column (speeds up highlighting)
@@ -229,4 +229,11 @@ let g:python3_host_skip_check = 1
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#use_cache = 1
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
