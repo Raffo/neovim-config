@@ -183,6 +183,7 @@ augroup go
   autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
   autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
   autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
   " compile at every save, cause I can
   "if !exists("autocommands_loaded")
