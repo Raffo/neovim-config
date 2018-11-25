@@ -20,7 +20,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'fatih/molokai'
 NeoBundle 'AndrewRadev/splitjoin.vim'
-NeoBundle 'ctrlpvim/ctrlp.vim'
+" NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 
@@ -28,6 +28,8 @@ NeoBundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 
 NeoBundle 'jamessan/vim-gnupg'
+
+NeoBundle 'junegunn/fzf'
 
 
 
@@ -59,7 +61,7 @@ set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 set noshowmatch                 " Do not show matching brackets by flickering
 set noshowmode                  " We show the mode with airline or lightline
 set ignorecase                  " Search case insensitive...
-set smartcase                   " ... but not it begins with upper case
+set smartcase                   " ... but not it begins with upper case 
 set completeopt=menu,menuone    " Show popup menu, even if there is one entry
 set pumheight=10                " Completion window max size
 set nocursorcolumn              " Do not highlight column (speeds up highlighting)
@@ -183,7 +185,9 @@ augroup go
   autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
   autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
   autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 
   " compile at every save, cause I can
   "if !exists("autocommands_loaded")
@@ -231,10 +235,15 @@ let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#use_cache = 1
 
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+
+let g:fzf_action = {
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \ }
+nnoremap <c-p> :FZF<cr>
+augroup fzf
+  autocmd!
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
