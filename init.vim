@@ -138,7 +138,7 @@ let g:go_highlight_generate_tags = 1
 let g:go_auto_type_info = 1
 " govim uses by default guru, but this is very slow to jump to definition. I
 " use godef here as it is faster
-let g:go_def_mode = 'godef' 
+let g:go_def_mode = 'gopls'
 
 " Open :GoDeclsDir with ctrl-g
 nmap <C-g> :GoDeclsDir<cr>
@@ -258,3 +258,4 @@ command! ProjectFiles execute 'FZF' s:find_git_root()
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
