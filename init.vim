@@ -31,6 +31,8 @@ NeoBundle 'jamessan/vim-gnupg'
 
 NeoBundle 'junegunn/fzf'
 
+NeoBundle 'ludovicchabant/vim-gutentags'
+
 
 
 call neobundle#end()
@@ -226,7 +228,7 @@ let g:loaded_python_provider = 1
 let g:python3_host_prog  = '/usr/local/bin/python3'
 let g:python_host_prog  = '/usr/local/bin/python'
 " Skip the check of neovim module
-let g:python3_host_skip_check = 1
+" let g:python3_host_skip_check = 1
 
 " Run deoplete.nvim automatically
 let g:deoplete#enable_at_startup = 1
