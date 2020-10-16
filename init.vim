@@ -31,8 +31,6 @@ NeoBundle 'jamessan/vim-gnupg'
 
 NeoBundle 'junegunn/fzf'
 
-NeoBundle 'ludovicchabant/vim-gutentags'
-
 NeoBundle 'dense-analysis/ale'
 
 call neobundle#end()
