@@ -223,18 +223,20 @@ nmap <leader>nt :NERDTreeToggle<cr>
 let g:loaded_python_provider = 1
 
 " Path to python interpreter for neovim
-let g:python3_host_prog  = '/usr/local/bin/python3'
-let g:python_host_prog  = '/usr/local/bin/python'
+let g:python3_host_prog  = '/bin/python3'
+let g:python_host_prog  = '/bin/python'
 " Skip the check of neovim module
 " let g:python3_host_skip_check = 1
 
 " Run deoplete.nvim automatically
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 " deoplete-go settings
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-let g:deoplete#sources#go#use_cache = 1
+" let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+" let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+" let g:deoplete#sources#go#use_cache = 1
 
+let g:completor_filetype_map = {}
+let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls -remote=auto'}"
 
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
