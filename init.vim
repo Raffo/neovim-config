@@ -23,15 +23,12 @@ NeoBundle 'AndrewRadev/splitjoin.vim'
 " NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
-
 NeoBundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
-
 NeoBundle 'jamessan/vim-gnupg'
-
 NeoBundle 'junegunn/fzf'
-
 NeoBundle 'dense-analysis/ale'
+NeoBundle 'github/copilot.vim'
 
 call neobundle#end()
 
